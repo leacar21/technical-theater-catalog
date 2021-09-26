@@ -27,7 +27,6 @@ public class TheaterCatalogController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<TheaterDTO> getAll(@RequestParam(value = "enable", required = false) Boolean enable) {
-        this.logger.info("aaa");
         return this.theaterCatalogService.getAllAdditionalsServicesConfigurations(enable);
     }
 
