@@ -68,7 +68,17 @@
 	        <groupId>org.modelmapper</groupId>
 	        <artifactId>modelmapper</artifactId>
 	        <version>${modelmapper.version}</version>
-	      </dependency>
+	    </dependency>
+	    
+	    <!-- Spring Cache (Caffeine implementation) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.ben-manes.caffeine</groupId>
+			<artifactId>caffeine</artifactId>
+		</dependency>
 		
 		
 	</dependencies>
