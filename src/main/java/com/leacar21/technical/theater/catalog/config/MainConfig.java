@@ -5,12 +5,16 @@ import static org.zalando.logbook.Conditions.requestTo;
 
 import java.util.Set;
 
+import org.modelmapper.ModelMapper;
+import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.zalando.logbook.BodyFilter;
 import org.zalando.logbook.BodyFilters;
 import org.zalando.logbook.Logbook;
 import org.zalando.logbook.json.JsonBodyFilters;
+
+import com.leacar21.technical.theater.catalog.constants.BeanNames;
 
 @Configuration
 public class MainConfig {
@@ -28,6 +32,16 @@ public class MainConfig {
                         requestTo("/health"), //
                         requestTo("/admin/**"))) //
                 .build(); //
+    }
+
+    @Bean(name = BeanNames.STRICT_MODEL_MAPPER)
+    public ModelMapper getStrictModelMapper() {
+        var modelMapper = new ModelMapper();
+        var configuration = modelMapper.getConfiguration();
+        // configuration.setDestinationNamingConvention(LombokBuilderNamingConvention.INSTANCE);
+        // configuration.setDestinationNameTransformer(LombokBuilderNameTransformer.INSTANCE);
+        configuration.setMatchingStrategy(MatchingStrategies.STRICT);
+        return modelMapper;
     }
 
 }

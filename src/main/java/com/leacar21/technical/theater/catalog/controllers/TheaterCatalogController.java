@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -19,7 +21,7 @@ import com.leacar21.technical.theater.catalog.services.TheaterCatalogService;
 @RequestMapping("theaters")
 public class TheaterCatalogController {
 
-    Logger logger = LoggerFactory.getLogger(TheaterCatalogController.class);
+    Logger log = LoggerFactory.getLogger(TheaterCatalogController.class);
 
     @Autowired
     private TheaterCatalogService theaterCatalogService;
@@ -27,7 +29,13 @@ public class TheaterCatalogController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<TheaterDTO> getAll(@RequestParam(value = "enable", required = false) Boolean enable) {
-        return this.theaterCatalogService.getAllAdditionalsServicesConfigurations(enable);
+        return this.theaterCatalogService.getAll(enable);
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.OK)
+    public TheaterDTO create(@RequestBody(required = true) TheaterDTO theaterDTO) {
+        return this.theaterCatalogService.create(theaterDTO);
     }
 
 }

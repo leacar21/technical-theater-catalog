@@ -11,11 +11,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class TheaterDTO {
+public class AuditoriumDTO {
 
     private String code;
     private String name;
-    private boolean enabled;
-    private Set<AuditoriumDTO> auditoriums;
+    private Set<SeatDTO> seats;
 
 }

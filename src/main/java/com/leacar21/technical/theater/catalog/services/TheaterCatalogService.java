@@ -6,6 +6,8 @@ import com.leacar21.technical.theater.catalog.dto.TheaterDTO;
 
 public interface TheaterCatalogService {
 
-    List<TheaterDTO> getAllAdditionalsServicesConfigurations(Boolean enable);
+    List<TheaterDTO> getAll(Boolean enable);
+
+    TheaterDTO create(TheaterDTO enable);
 
 }
