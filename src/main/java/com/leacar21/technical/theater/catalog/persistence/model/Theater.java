@@ -1,6 +1,6 @@
 package com.leacar21.technical.theater.catalog.persistence.model;
 
-import java.util.Set;
+import java.util.List;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -33,6 +33,6 @@ public class Theater extends AbstractEntityJPA {
     private boolean enabled;
 
     @OneToMany(mappedBy = "theater")
-    private Set<Auditorium> auditoriums;
+    private List<Auditorium> auditoriums;
 
 }

@@ -38,8 +38,6 @@ public class MainConfig {
     public ModelMapper getStrictModelMapper() {
         var modelMapper = new ModelMapper();
         var configuration = modelMapper.getConfiguration();
-        // configuration.setDestinationNamingConvention(LombokBuilderNamingConvention.INSTANCE);
-        // configuration.setDestinationNameTransformer(LombokBuilderNameTransformer.INSTANCE);
         configuration.setMatchingStrategy(MatchingStrategies.STRICT);
         return modelMapper;
     }

@@ -1,6 +1,6 @@
 package com.leacar21.technical.theater.catalog.dto;
 
-import java.util.Set;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,6 +16,6 @@ public class TheaterDTO {
     private String code;
     private String name;
     private boolean enabled;
-    private Set<AuditoriumDTO> auditoriums;
+    private List<AuditoriumDTO> auditoriums;
 
 }
