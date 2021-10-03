@@ -30,12 +30,12 @@ public class TheaterCatalogServiceImpl implements TheaterCatalogService {
     @Override
     @Transactional(readOnly = true)
     @Cacheable(value = "theaters", unless = "#result.size() == 0")
-    public List<TheaterDTO> getAll(Boolean enable) {
+    public List<TheaterDTO> getAll(Boolean enabled) {
         List<Theater> listTheater = null;
-        if (enable == null) {
+        if (enabled == null) {
             listTheater = this.theaterDAO.findAll();
         } else {
-            listTheater = this.theaterDAO.findAll(enable);
+            listTheater = this.theaterDAO.findAll(enabled);
         }
 
         return this.theaterConverter.toDTO(listTheater);

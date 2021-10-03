@@ -28,8 +28,8 @@ public class TheaterCatalogController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<TheaterDTO> getAll(@RequestParam(value = "enable", required = false) Boolean enable) {
-        return this.theaterCatalogService.getAll(enable);
+    public List<TheaterDTO> getAll(@RequestParam(value = "enabled", required = false) Boolean enabled) {
+        return this.theaterCatalogService.getAll(enabled);
     }
 
     @PostMapping
