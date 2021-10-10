@@ -9,6 +9,6 @@ import com.leacar21.technical.theater.catalog.persistence.model.Seat;
 
 public interface SeatRepository extends JpaRepository<Seat, Long> {
 
-    public Optional<Seat> findByCode(UUID reservationCode);
+    Optional<Seat> findByCode(UUID reservationCode);
 
 }

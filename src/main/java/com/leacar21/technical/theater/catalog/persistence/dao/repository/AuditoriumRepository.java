@@ -9,6 +9,6 @@ import com.leacar21.technical.theater.catalog.persistence.model.Auditorium;
 
 public interface AuditoriumRepository extends JpaRepository<Auditorium, Long> {
 
-    public Optional<Auditorium> findByCode(UUID code);
+    Optional<Auditorium> findByCode(UUID code);
 
 }

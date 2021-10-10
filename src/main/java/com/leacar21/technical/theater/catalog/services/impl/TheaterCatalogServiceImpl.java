@@ -9,7 +9,6 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.leacar21.technical.theater.catalog.controllers.TheaterCatalogController;
 import com.leacar21.technical.theater.catalog.converters.TheaterConverter;
 import com.leacar21.technical.theater.catalog.dto.TheaterDTO;
 import com.leacar21.technical.theater.catalog.persistence.dao.TheaterDAO;
@@ -19,7 +18,7 @@ import com.leacar21.technical.theater.catalog.services.TheaterCatalogService;
 @Service
 public class TheaterCatalogServiceImpl implements TheaterCatalogService {
 
-    Logger log = LoggerFactory.getLogger(TheaterCatalogController.class);
+    Logger log = LoggerFactory.getLogger(TheaterCatalogServiceImpl.class);
 
     @Autowired
     private TheaterDAO theaterDAO;
