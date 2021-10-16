@@ -32,11 +32,9 @@ public class MainConfig implements WebMvcConfigurer {
 
         // Para excluir algunos path
         return Logbook.builder()
-                      .bodyFilter(customBodyFilter) //
-                      .condition(exclude( //
-                              requestTo("/health"), //
-                              requestTo("/admin/**"))) //
-                      .build(); //
+                      .bodyFilter(customBodyFilter)
+                      .condition(exclude(requestTo("/health"), requestTo("/admin/**")))
+                      .build();
     }
 
     @Bean(name = BeanNames.STRICT_MODEL_MAPPER)
