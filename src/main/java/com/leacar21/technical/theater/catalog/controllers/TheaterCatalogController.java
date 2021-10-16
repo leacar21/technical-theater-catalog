@@ -18,8 +18,10 @@ import com.leacar21.technical.theater.catalog.dto.TheaterDTO;
 import com.leacar21.technical.theater.catalog.services.TheaterCatalogService;
 
 @RestController()
-@RequestMapping("theaters")
+@RequestMapping(TheaterCatalogController.THEATERS_RESOURCE)
 public class TheaterCatalogController {
+
+    public static final String THEATERS_RESOURCE = "theaters";
 
     Logger log = LoggerFactory.getLogger(TheaterCatalogController.class);
 
