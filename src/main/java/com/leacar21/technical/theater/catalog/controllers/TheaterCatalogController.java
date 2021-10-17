@@ -19,7 +19,7 @@ import com.leacar21.technical.theater.catalog.services.TheaterCatalogService;
 @RequestMapping(TheaterCatalogController.THEATERS_RESOURCE)
 public class TheaterCatalogController {
 
-    public static final String THEATERS_RESOURCE = "theaters";
+    public static final String THEATERS_RESOURCE = "/theaters";
 
     @Autowired
     private TheaterCatalogService theaterCatalogService;
@@ -31,7 +31,7 @@ public class TheaterCatalogController {
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     public TheaterDTO create(@RequestBody(required = true) TheaterDTO theaterDTO) {
         return this.theaterCatalogService.create(theaterDTO);
     }
