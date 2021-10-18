@@ -1,6 +1,7 @@
-CREATE SCHEMA IF NOT EXISTS theaters CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+-- CREATE SCHEMA IF NOT EXISTS theaters CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-USE theaters;
+-- USE theaters;
+USE heroku_25abbf17d34c1f5;
 
 CREATE TABLE IF NOT EXISTS `theater`
 (
