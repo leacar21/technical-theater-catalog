@@ -9,7 +9,6 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.zalando.logbook.BodyFilter;
@@ -20,7 +19,6 @@ import org.zalando.logbook.json.JsonBodyFilters;
 import com.leacar21.technical.theater.catalog.constants.BeanNames;
 
 @Configuration
-@EnableWebMvc
 public class MainConfig implements WebMvcConfigurer {
 
     @Bean
